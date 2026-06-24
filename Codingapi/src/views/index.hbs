@@ -1,0 +1,73 @@
+<style>
+  .container-fluid { 
+    padding-left: 15px; 
+    padding-right: 15px; 
+    margin-right: auto; 
+    margin-left: auto; 
+  } 
+  .card { 
+    border: none; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    background: 'white'; 
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); 
+    backdrop-filter: blur(18px); 
+    -webkit-backdrop-filter: blur(18px); 
+    border: 1px solid rgba(255, 255, 255, 0.18); 
+    border-radius: 1rem; 
+    padding: 1.5rem; 
+    z-index: 10; 
+    color: rgb(0, 0, 0); 
+  } 
+  .section-title { 
+    font-size: 24px; 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+  } 
+  .section-description { 
+    font-size: 18px; 
+    margin-bottom: 20px; 
+  } 
+  .benefits-list { 
+    list-style-type: disc; 
+    margin-left: 20px; 
+  }
+</style>
+
+<div class="container-fluid py-4">
+  <div class="row mt-4">
+    <div style="margin: auto;" class="col-lg-7 mb-lg-0 mb-4">
+      <div class="card z-index-2 h-100">
+        <div class="card-header pb-0 pt-3 bg-transparent">
+          <h2 class="section-title">Diseñando un Sistema de Detección de Micro-sueños para Conductores de Vehículos Pesados Utilizando Visión Artificial</h2>
+          <p class="section-description">
+            Los micro-sueños representan una seria amenaza para la seguridad vial, especialmente para los conductores de vehículos pesados, donde la fatiga puede resultar catastrófica. Nuestro proyecto de diseño de un sistema de detección de micro-sueños utiliza tecnología de visión artificial para abordar este problema de manera innovadora, ofreciendo una solución efectiva para mejorar la seguridad en las carreteras.
+          </p>
+          <hr />
+          
+          <h3 class="section-title">Descripción del Proyecto</h3>
+          <p class="section-description">
+            Nuestra solución aprovecha la potencia de la visión artificial para detectar micro-sueños en conductores de vehículos pesados. Al emplear algoritmos avanzados de análisis de imágenes, nuestro sistema monitorea constantemente los patrones de los ojos y los movimientos faciales del conductor para identificar signos de fatiga y micro-sueños.
+          </p>
+
+          <video width="100%" height="400" controls>
+            <source src="/assets/img/video.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+          </video>
+          <br />
+
+          <p class="section-description">
+            Una vez detectado un micro-sueño, nuestro sistema envía una señal de alerta al conductor a través de una Rasberry Pi, activando un sistema de alarma que incluye un bocinazo y la iluminación de LEDs para alertar al conductor sobre su estado de somnolencia. Además, se realiza el registro de dicho micro-sueño en nuestra plataforma (TruckAlert), permitiendo un seguimiento y análisis más detallado de la fatiga del conductor.
+          </p>
+          <hr />
+
+          <h3 class="section-title">Beneficios para los Usuarios</h3>
+          <ul class="benefits-list">
+            <li>Detección Temprana: Nuestra tecnología proporciona una detección temprana de micro-sueños, permitiendo a los conductores responder de manera proactiva antes de que ocurran situaciones peligrosas en la carretera.</li>
+            <li>Prevención de Accidentes: Al alertar a los conductores sobre su estado de somnolencia, nuestro sistema ayuda a prevenir accidentes causados por la fatiga, protegiendo la vida del conductor y de otros usuarios de la vía.</li>
+            <li>Registro y Análisis de Datos: La plataforma TruckAlert permite llevar un registro histórico de los micro-sueños detectados, lo que facilita un análisis detallado de los patrones de fatiga y permite tomar medidas preventivas adecuadas.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,101 @@
+<style>
+  .card {
+  width: auto;
+  margin: 10px;
+  justify-content: center;
+  min-height: 250px;
+  background: rgba( 255, 255, 255, 0.15 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 18px );
+  -webkit-backdrop-filter: blur( 18px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border-radius: 1rem;
+  padding: 1.5rem;
+  z-index: 10;
+  color: rgb(0, 0, 0);
+}
+</style>
+<main class="main-content mt-0">
+  <div class="container ">
+    <div class="row mt-lg-n10 mt-md-n11 mt-n10 justify-content-center">
+      <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
+        <div class="card z-index-0">
+          <div class="card-header text-center pt-4">
+            <h5>Ingrese los siguientes datos</h5>
+            <p>Estos datos son necesarios para poder registrar empleados</p>
+            <img class="bordes" style="margin: auto;" src="/assets/img/logo.png" alt="logo">
+          </div>
+          <div class="card-body">
+            <form action="/users/signup" method="POST">
+              <div class="form-group">
+                <input
+                  type="String"
+                  class="form-control"
+                  name="fullname"
+                  placeholder="Nombre Completo *"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="Number"
+                  class="form-control"
+                  name="phone"
+                  placeholder="Telefono *"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="String"
+                  class="form-control"
+                  name="company"
+                  placeholder="Empresa *"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="Number"
+                  class="form-control"
+                  name="identificacion"
+                  placeholder="Numero de documento *"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  placeholder="Email *"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  placeholder="Password *"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="password"
+                  class="form-control"
+                  name="confirm_password"
+                  placeholder="Confirme Password *"
+                />
+              </div>
+              <button class="btn btn-primary btn-block btn-lg w-100 mt-4 mb-0">
+                Registrar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+
+    <style>
+
+        .container56 {
+            width: 80%; /* Cambiar según el ancho deseado */
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            justify-content: center;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <div class="container56">
+        <h1>Registro de Micro-sueños</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th style="text-align: center;">Fecha</th>
+                    <th style="text-align: center;">Total de Micro-sueños</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#if datosPorDia}}
+                    {{#each datosPorDia}}
+                        <tr>
+                            <td style="text-align: center;">{{this._id}}</td>
+                            <td style="text-align: center;">{{this.totalMicrosuenos}}</td>
+                        </tr>
+                    {{/each}}
+                {{else}}
+                    <tr>
+                        <td style="text-align: center;" colspan="2">No hay datos de micro-sueños para mostrar.</td>
+                    </tr>
+                {{/if}}
+            </tbody>
+        </table>
+    </div>

@@ -1,0 +1,114 @@
+<style>
+  .card{
+    width: auto;
+    margin: 10px;
+    justify-content: center;
+    min-height: 250px;
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 18px );
+    -webkit-backdrop-filter: blur( 18px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 1rem;
+    padding: 1.5rem;
+    z-index: 10;
+    color: rgb(0, 0, 0);
+  }
+</style>
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card">
+      <div class="card-header">
+        Actualizar Empleado
+      </div>
+      <div class="card-body">
+        <form action="/actualizar/empleado/{{empleado._id}}" method="post">
+          <div class="form-group">
+            <label for="firstName">Nombre:</label>
+            <input
+              type="String"
+              class="form-control"
+              name="fullname"
+              value="{{empleado.fullname}}"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefono:</label>
+            <input
+              type="Number"
+              class="form-control"
+              name="phone"
+              value="{{empleado.phone}}"
+            />
+          </div>
+          <div class="form-group">
+            <label for="department">Departamento:</label>
+            <input
+              type="String"
+              class="form-control"
+              name="department"
+              value="{{empleado.department}}"
+            />
+          </div>
+          <div class="form-group">
+            <label for="municipality">Municipio:</label>
+            <input
+              type="String"
+              class="form-control"
+              name="municipality"
+              value="{{empleado.municipality}}"
+            />
+          </div>
+          <div class="form-group">
+            <label for="neighborhood">Barrio:</label>
+            <input
+              type="String"
+              class="form-control"
+              name="neighborhood"
+              value="{{empleado.neighborhood}}"
+            />
+          </div>
+          <div class="form-group">
+            <label for="address">Direccion:</label>
+            <input
+              type="String"
+              class="form-control"
+              name="address"
+              value="{{empleado.address}}"
+            />
+          </div>
+          <div class="form-group">
+            <label for="descriptionhouse">Placa del vehiculo:</label>
+            <input
+              type="String"
+              class="form-control"
+              name="Vehicle_plate"
+              value="{{empleado.Vehicle_plate}}"
+            />
+          </div>
+          <div class="form-group">
+            <label for="identificacion">Identificación:</label>
+            <input
+              type="Number"
+              class="form-control"
+              name="identificacion"
+              value="{{empleado.identificacion}}"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              value="{{empleado.email}}"
+            />
+          </div>
+          <input type="hidden" name="idgefe" value="{{user._id}}" />
+          <button class="btn btn-primary btn-sm mt-2">Guardar cambios</button>
+          <a href="/empleados/{{user._id}}" class="btn btn-secondary btn-sm mt-2 ml-2">Cancelar</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

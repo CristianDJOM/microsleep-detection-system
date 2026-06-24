@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="icon" type="image/png" href="/assets/img/logo.png">
+  <title>TruckAlert</title>
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link id="pagestyle" href="/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="/assets/css/nucleo-svg.css" rel="stylesheet" /> 
+  <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
+  <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+  <link id="pagestyle" href="/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <!-- Incluir Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-cf0FfVdXZ3dPuAmxP6gXl/R9JiaJzr0Sncj+2QMTxwz4e5eS8s1YxvlP2pdH5P6szfn2HRNiE5W6hDVTXyhSuA==" crossorigin="anonymous" />
+
+</head>
+<body class="body">
+  <main class="main-content position-relative contenedor">
+    <!-- Navbar -->
+    <div class="container-fluid px-0">
+      <nav class="navbar navbar-expand-md navbar-light bg-white p-0">
+        <a href="/"><img class="bordes1" src="/assets/img/logo.png" alt="logo"></a>
+        <a class="navbar-brand mr-4" href="/"><strong>TruckAlert</strong></a>
+        <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a  class="nav-link active" aria-current="page" href="/"><i class="fas fa-home"></i> Home</a>
+            </li>
+            {{#if user.roladmin}}
+              <div class="nav-item dropdown">
+				        <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"> Acciones de administrador <b class="caret"></b></a>
+				        <div class="dropdown-menu">
+                  <a  class="dropdown-item" aria-current="page" href="/registrar/empleado">Registrar empleados</a>
+                  <a  class="dropdown-item" aria-current="page" href="/empleados">Empleados</a>
+				        </div>
+			        </div>
+            {{/if}}
+            {{#if user}}
+            <div class="nav-item dropdown">
+				      <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"> <i class="fa fa-user-o"></i> Usuario<b class="caret"></b></a>
+				      <div class="dropdown-menu">
+					      <a href="/perfil/{{user._id}}" class="dropdown-item"><i class="fa fa-user-circle"></i> Perfil</a>
+					      <div class="divider dropdown-divider"></div>
+					      <a href="/users/logout" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Salir</a>
+				      </div>
+			      </div>
+            <li class="nav-item">
+              <a  class="nav-link active" aria-current="page" href="/registrar/empleado/{{user._id}}"><i class="fa fa-address-book"></i> Registrar Empleados</a>
+            </li>
+            <li class="nav-item">
+              <a  class="nav-link active" aria-current="page" href="/empleados/{{user._id}}"><i class="fa fa-cogs"></i> Control Empleados</a>
+            </li>
+            <form action="/buscar" method="post" class="d-flex mt-3" role="search" style="margin: 10px;">
+              <input type="hidden" name="idgefe" value="{{user._id}}" />
+              <input name="Identificacion" class="form-control me-2" type="search" placeholder="Identificacion" aria-label="Search">
+              <button class="btn btn-success" type="submit" style="margin-left: 10px; height: 38px;">Buscar</button>
+            </form>
+            {{else}}
+            <li class="nav-item">
+              <a class="nav-link active"  href="/users/signin"><i class="fas fa-sign-in-alt"></i> Ingresar</a>
+            </li>
+            {{/if}}
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- End Navbar -->
+    {{> messages }}
+    {{> errors }}
+    {{{ body }}}
+<footer class="relative bg-blueGray-200 pt-8 pb-6" style="background-color: #f3c017;">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap text-left lg:text-left">
+      <div class="w-full lg:w-6/12 px-4">
+        <h4 class="text-3xl fonat-semibold text-blueGray-700">¡Mantengámonos en contacto!</h4>
+        <h5 class="text-lg mt-0 mb-2 text-blueGray-600">
+          Encuéntranos en cualquiera de estas plataformas, respondemos 1-2 días hábiles.
+        </h5>
+        <div class="elementor-widget-container">
+              <ul class="elementor-icon-list-items">
+                <li class="elementor-icon-list-item">
+                  <a href="#" target="_blank">
+                    <span class="elementor-icon-list-icon">
+                      <i aria-hidden="true" class="fab fa-whatsapp-square"></i>
+                    </span>
+                    <span class="elementor-icon-list-text">Línea única: +57 302 302 7315</span>
+                  </a>
+                </li>
+                <li class="elementor-icon-list-item">
+                  <span class="elementor-icon-list-icon">
+                    <i aria-hidden="true" class="fas fa-envelope"></i>
+                  </span>
+                  <span class="elementor-icon-list-text">PQRS: ServiRepuestos799@gmail.com</span>
+                </li>
+              </ul>
+        </div>
+        <div class="mt-6 lg:mb-0 mb-6">
+          <button class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+            <i class="fab fa-twitter"></i></button><button class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+            <i class="fab fa-facebook-square"></i></button><button class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+            <i class="fab fa-instagram"></i></button><button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+            <i class="fab fa-whatsapp"></i>
+            
+          </button>
+        </div>
+      </div>
+      <div class="w-full lg:w-6/12 px-4">
+        <div class="flex flex-wrap items-top mb-6">
+          <div class="w-full lg:w-4/12 px-4 ml-auto">
+            <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">ENLACES ÚTILES</span>
+            <ul class="list-unstyled">
+              <li>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="#">#</a>
+              </li>
+              <li>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="#">#</a>
+              </li>
+              <li>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="#">#</a>
+              </li>
+            </ul>
+          </div>
+          <div class="w-full lg:w-4/12 px-4">
+            <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">OTROS RECURSOS</span>
+            <ul class="list-unstyled">
+              <li>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="#">Terminos &amp; Condiciones</a>
+              </li>
+              <li>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="#">Politica de privacidad</a>
+              </li>
+              <li>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="#">Preguntas Frecuentes</a>
+              </li>
+              <li>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="#">#</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="my-6 border-blueGray-300">
+    <div class="flex flex-wrap items-center md:justify-between justify-center">
+      <div class="w-full md:w-4/12 px-4 mx-auto text-center">
+        <div class="text-sm text-blueGray-500 font-semibold py-1">
+          Copyright © <span id="get-current-year">2024</span><a href="/" class="text-blueGray-500 hover:text-gray-800" target="_blank"> TruckAlert.
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  </main>
+
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
+  <!--   Core JS Files   -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+  <script src="/assets/js/core/popper.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/assets/js/core/popper.min.js"></script>
+  <script src="/assets/js/core/bootstrap.min.js"></script>
+  <script src="/assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="/assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="/assets/js/plugins/chartjs.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+</body>
+</html>

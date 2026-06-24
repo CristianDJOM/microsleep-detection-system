@@ -1,0 +1,117 @@
+<style>
+    summary {
+  border: 4px solid transparent;
+  outline: none;
+  &:focus {
+    border-color: black;
+  }
+  padding: 1rem;
+  display: block;
+  background: #444;
+  color: white;
+  padding-left: 2.2rem;
+  position: relative;
+  cursor: pointer;
+}
+details {
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-top: 5px;
+  background: white;
+}
+details summary::-webkit-details-marker {
+  display:none;
+}
+details[open] > summary:before {
+  transform: rotate(90deg);
+}
+summary:before {
+    
+  content: '';
+  border-width: .4rem;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  position: absolute;
+  top: 1.3rem;
+  left: 1rem;
+  transform: rotate(0);
+  transform-origin: .2rem 50%;
+  transition: .25s transform ease;
+}
+
+
+
+.content {
+  border-top: none;
+  padding: 10px;
+  border: 2px solid #888;
+  border-top: none;
+}
+
+
+.container {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.card {
+    max-width: 100%;
+    margin-top: 5px;
+  width: auto;
+  background: rgba( 255, 255, 255, 0.15 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 18px );
+  -webkit-backdrop-filter: blur( 18px );
+  padding: 1.5rem;
+  z-index: 10;
+  color: black;
+}
+.bordes2{
+    border-radius: 50%;
+    width: 200px;
+}
+</style>
+<div class="card container">
+    <a href="/"><img class="bordes2" src="/assets/img/logo.jpg" alt="logo"></a>
+    <br>
+    <h2>Preguntas Frecuentes</h2>
+</div>
+<details>
+  <summary>¿ Está Disponible el Repuesto o Servicio que vi en la Tienda Web ?</summary>
+  <div class="content">
+    <p>Sí, todos los repuestos y servicios que encuentres en nuestra tienda Web están disponibles, ya que nuestro inventario se actualiza todos los días.</p>
+  </div>
+</details>
+<details>
+  <summary>¿ Tienen Almacén Físico ?</summary>
+  <div class="content">
+    <p>No, nuestros productos y servicios llegaran a tu vivienda. </p>
+  </div>
+</details>
+<details>
+  <summary>¿ El precio del producto es el que está en la tienda Web ?</summary>
+  <div class="content">
+   <p>
+    Sí, el precio en pesos colombianos (COP) es el que se muestra arriba de los botones de comprar y añadir al carrito.
+   </p>
+  </div>
+</details>
+<details>
+  <summary>¿ Como saber cuánto cuesta el envío del pedido ?</summary>
+  <div class="content">
+   <p>
+    El costo del envio saldra debajo del precio en letras verdes.
+   </p>
+  </div>
+</details>
+<details>
+  <summary>¿ Los Repuestos y Servicios tienen Garantía ?</summary>
+  <div class="content">
+   <p>
+    /respuesta
+   </p>
+  </div>
+</details>
