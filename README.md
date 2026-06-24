@@ -21,3 +21,31 @@ Develop an intelligent monitoring system capable of detecting microsleep episode
 - Event logging and statistics visualization.
 - Web-based management platform.
 - Integration between hardware and software components.
+
+## 🔌 Hardware Components
+
+- Raspberry Pi
+- Night Vision Camera
+- Speaker/Buzzer
+- Power Supply
+
+## 🛠️ Technologies Used
+
+### Software
+- Node.js
+- JavaScript
+- HTML
+- CSS
+- Python
+- MongoDB
+
+### Hardware
+- Raspberry Pi
+- Night Vision Camera
+
+### Concepts
+- Computer Vision
+- Embedded Systems
+- Road Safety Monitoring
+
+
