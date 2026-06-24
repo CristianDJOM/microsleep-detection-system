@@ -5,8 +5,6 @@
 </div>
 <img src="https://res.cloudinary.com/dbpcmxdx4/image/upload/v1782316024/Presentacion/Microsue%C3%B1o_on9lp1.png">
 
-<div align="center">
-
 
 ## 📖 Project Description
 
